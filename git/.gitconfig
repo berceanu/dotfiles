@@ -1,5 +1,17 @@
 [user]
 	email = andreicberceanu@gmail.com
-	name = Andrei Berceanu
+	name = berceanu
 [push]
 	default = simple
+[color]
+	ui = auto
+[pack]
+	threads = 0
+[alias]
+	pr = pull --rebase
+	pm = pull --rebase mainline
+	st = status -sb
+	l = log --oneline --graph --decorate --first-parent
+	la = log --oneline --graph --decorate --all
+[rerere]
+	enable = 1
