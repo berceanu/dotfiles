@@ -125,4 +125,17 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 fi
 
 # added by Anaconda3 installer
-export PATH="/home/berceanu/anaconda3/bin:$PATH"
+export PATH="/home/berceanu/anaconda3/bin:/home/berceanu/CodeLiteBuild/bin:$PATH"
+
+# Load spack environment and PIConGPU module
+#source $HOME/src/spack/share/spack/setup-env.sh
+#spack load picongpu
+
+# PIConGPU
+export MY_MAILNOTIFY="NONE"
+export MY_MAIL="andrei.berceanu@eli-np.ro"
+export MY_NAME="$(whoami) <$MY_MAIL>"
+
+export SCRATCH=$HOME
+# k80 optimized
+export PIC_BACKEND="cuda:37"
