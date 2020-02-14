@@ -5,6 +5,7 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -53,6 +54,7 @@
 
 ;; Org-Mode
 (setq org-confirm-babel-evaluate nil)
+(require 'htmlize)
 
 ;; Display inline images
 (setq org-startup-with-inline-images t)
