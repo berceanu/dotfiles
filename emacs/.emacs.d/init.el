@@ -42,13 +42,13 @@
 (setq markdown-command "pandoc")
 
 ;; Menlo font from https://github.com/hbin/top-programming-fonts
-(set-frame-font "Menlo:pixelsize=18")
+(set-frame-font "InconsolataGo Nerd Font:pixelsize=18")
 
 ;; Org-Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
-   (sh . t)
+   (shell . t)
    ))
 
 ;; Org-Mode
