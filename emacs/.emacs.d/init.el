@@ -42,9 +42,6 @@
 ;; For markdown-mode preview
 (setq markdown-command "pandoc")
 
-;; Menlo font from https://github.com/hbin/top-programming-fonts
-(set-frame-font "InconsolataGo Nerd Font:pixelsize=18")
-
 ;; Org-Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
