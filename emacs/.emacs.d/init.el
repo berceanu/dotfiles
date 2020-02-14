@@ -58,11 +58,9 @@
 
 ;; Org-Mode
 (setq org-confirm-babel-evaluate nil)
-;;(require 'htmlize)
 
 ;; Display inline images
 (setq org-startup-with-inline-images t)
-
 
 ;;; my own functions
 
