@@ -48,7 +48,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
-   (sh . t)
+   (shell . t)
    ))
 
 ;; Org-Mode

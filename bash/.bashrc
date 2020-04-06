@@ -117,15 +117,21 @@ if ! shopt -oq posix; then
 fi
 
 # Powerline
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  source /usr/share/powerline/bindings/bash/powerline.sh
-fi
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
 
-# added by Anaconda3 installer
-export PATH="/home/berceanu/anaconda3/bin:/home/berceanu/CodeLiteBuild/bin:$PATH"
+export VIRTUALENV_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$VIRTUALENV_PYTHON
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+export PATH="/home/berceanu/CodeLiteBuild/bin:/home/berceanu/.local/bin:$PATH"
+source ~/.local/bin/virtualenvwrapper.sh
 
 # Load spack environment and PIConGPU module
 #source $HOME/src/spack/share/spack/setup-env.sh
@@ -139,3 +145,29 @@ export MY_NAME="$(whoami) <$MY_MAIL>"
 export SCRATCH=$HOME
 # k80 optimized
 export PIC_BACKEND="cuda:37"
+
+export GEM_HOME=~/.ruby
+export PATH="$PATH:~/.ruby/bin:/home/berceanu/bin"
+
+# added by travis gem
+[ -f /home/berceanu/.travis/travis.sh ] && source /home/berceanu/.travis/travis.sh
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/berceanu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/berceanu/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/berceanu/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/berceanu/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Map vi and vim to nvim
+alias vi="nvim"
+alias vim="nvim"

@@ -1,6 +1,7 @@
 [user]
 	email = andreicberceanu@gmail.com
-	name = berceanu
+	name = Andrei Berceanu
+	signingkey = 03DD32534086D313
 [push]
 	default = simple
 [color]
@@ -17,3 +18,12 @@
 	enable = 1
 [credential]
 	helper = cache --timeout=3600
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
