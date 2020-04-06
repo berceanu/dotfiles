@@ -5,6 +5,7 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -24,6 +25,13 @@
 
 
 ;; Emacs various
+(setq user-full-name "Andrei Berceanu")
+(setq user-mail-address "andreicberceanu@gmail.com")
+
+;; Let's not exit emacs. Deleting the frame is almost always what I want.
+;; This is because I run emacs in server mode all the time.
+(global-set-key (kbd "C-x C-c") 'delete-frame)
+
 (setq inhibit-splash-screen t)
 (setq frame-title-format "%b")
 (put 'downcase-region 'disabled nil)
@@ -41,9 +49,6 @@
 ;; For markdown-mode preview
 (setq markdown-command "pandoc")
 
-;; Menlo font from https://github.com/hbin/top-programming-fonts
-(set-frame-font "Menlo:pixelsize=18")
-
 ;; Org-Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -56,7 +61,6 @@
 
 ;; Display inline images
 (setq org-startup-with-inline-images t)
-
 
 ;;; my own functions
 
